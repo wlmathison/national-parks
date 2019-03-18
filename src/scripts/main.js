@@ -5,15 +5,13 @@ const postToDOM = (park) => {
     const stateName = park.state;
     const visitedStatus = park.visited;
     
-    let displayHTML = `<article>
-    <h3>${parkName}</h3>
-    <p>${stateName}</p>
-    </article>`;
+    let displayHTML = `<h3>${parkName}</h3>
+    <p>${stateName}</p>`;
     
-    let newParkDiv = document.createElement("div");
-    newParkDiv.classList = visitedStatus;
-    newParkDiv.innerHTML = displayHTML;
-    displayContainer.appendChild(newParkDiv)
+    let newParkArticle = document.createElement("article");
+    newParkArticle.classList = visitedStatus;
+    newParkArticle.innerHTML = displayHTML;
+    displayContainer.appendChild(newParkArticle)
 }
 
 getParksList()
