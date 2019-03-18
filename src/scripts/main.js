@@ -16,4 +16,6 @@ const postToDOM = (park) => {
     displayContainer.appendChild(newParkDiv)
 }
 
+getParksList()
+
 
