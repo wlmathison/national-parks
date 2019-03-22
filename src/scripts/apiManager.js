@@ -3,10 +3,11 @@ const getWeatherfromDarkSky = (latitude, longitude) => {
         .then(r => r.json())
         .then(parsedResults => {
             getWeather(parsedResults)
+            
         })
 }
 const getParksList = () => {
-    return fetch("http://localhost:9099/parks")
+    return fetch("http://localhost:8088/parks")
         .then(r => r.json())
         .then(parsedResults => {
             parsedResults.forEach(item => {

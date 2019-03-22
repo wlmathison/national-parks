@@ -18,6 +18,10 @@ const getWeather = (weather) => {
     return weatherDisplayHTML;
 }
 
+
+
+
+
 const postToDOM = (park) => {
     let parkName = park.name;
     let stateName = park.state;
@@ -29,11 +33,17 @@ const postToDOM = (park) => {
     let displayHTML = `
     <h3>${parkName}</h3>
     <p>${stateName}</p>`;
-    
+
     getWeatherfromDarkSky(park.latitude, park.longitude)
         .then(() => {
-            newParkArticle.innerHTML = displayHTML + weatherDisplayHTML;
+            return newParkArticle.innerHTML = displayHTML + weatherDisplayHTML;
+        }).then(() => {
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete Park";
+            newParkArticle.appendChild(deleteButton);
         })
+
+   
 
     displayContainer.appendChild(newParkArticle)
 }
